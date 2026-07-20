@@ -1,0 +1,388 @@
+/* ===========================
+   PROGRESS PAGE
+=========================== */
+
+.progress-page{
+    padding:80px;
+    background:#f8fafc;
+    min-height:100vh;
+}
+
+.progress-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.progress-header h1{
+    font-size:46px;
+    color:#1e293b;
+}
+
+.progress-header p{
+    margin-top:15px;
+    color:#64748b;
+    font-size:18px;
+}
+
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-bottom:50px;
+}
+
+.summary-card{
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.summary-card:hover{
+    transform:translateY(-8px);
+}
+
+.summary-card h2{
+    font-size:42px;
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.summary-card p{
+    color:#64748b;
+}
+
+.progress-table{
+    background:white;
+    padding:35px;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    margin-bottom:40px;
+    overflow-x:auto;
+}
+
+.progress-table h2{
+    margin-bottom:25px;
+}
+
+.progress-table table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.progress-table th,
+.progress-table td{
+    padding:18px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+}
+
+.progress-table th{
+    background:#eff6ff;
+    color:#2563eb;
+}
+
+.activity-box{
+    background:white;
+    padding:35px;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.activity-box h2{
+    margin-bottom:20px;
+}
+
+.activity-box ul{
+    list-style:none;
+}
+
+.activity-box li{
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+@media(max-width:768px){
+
+.progress-page{
+    padding:30px;
+}
+
+.summary-grid{
+    grid-template-columns:1fr;
+}
+
+}
+/* ===========================
+   INSTRUCTOR DASHBOARD
+=========================== */
+
+.instructor-page{
+
+    padding:80px;
+
+    background:#f8fafc;
+
+    min-height:100vh;
+
+}
+
+.instructor-header{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.instructor-header h1{
+
+    font-size:46px;
+
+    color:#1e293b;
+
+}
+
+.instructor-header p{
+
+    color:#64748b;
+
+    margin-top:15px;
+
+}
+/* ===========================
+   CREATE COURSE
+=========================== */
+
+.create-course-page{
+    background:#f8fafc;
+    padding:80px;
+    min-height:100vh;
+}
+
+.form-container{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:45px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.form-container h1{
+    margin-bottom:10px;
+    color:#1e293b;
+}
+
+.form-container p{
+    color:#64748b;
+    margin-bottom:35px;
+}
+
+.course-form{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.form-group textarea{
+    resize:none;
+}
+/* ===========================
+   CREATE QUIZ
+=========================== */
+
+.create-quiz-page{
+
+    background:#f8fafc;
+
+    padding:80px;
+
+    min-height:100vh;
+
+}
+/* ===========================
+   MANAGE COURSES
+=========================== */
+
+.manage-courses-page{
+    padding:80px;
+    background:#f8fafc;
+    min-height:100vh;
+}
+
+.manage-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.manage-header h1{
+    font-size:44px;
+    color:#1e293b;
+}
+
+.manage-header p{
+    color:#64748b;
+    margin-top:10px;
+}
+
+.manage-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.manage-table th{
+    background:#2563eb;
+    color:white;
+    padding:18px;
+}
+
+.manage-table td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+}
+
+.edit-btn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:10px;
+}
+
+.delete-btn{
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.edit-btn:hover{
+    background:#1d4ed8;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+/* ===========================
+   ENROLLED STUDENTS
+=========================== */
+
+.students-page{
+
+    padding:80px;
+
+    background:#f8fafc;
+
+    min-height:100vh;
+
+}
+
+.students-header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.students-header h1{
+
+    font-size:46px;
+
+    color:#1e293b;
+
+}
+
+.students-header p{
+
+    color:#64748b;
+
+    margin-top:12px;
+
+}
+
+.search-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:35px;
+
+}
+
+.search-container input{
+
+    width:400px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+}
+
+.students-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.students-table th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:18px;
+
+}
+
+.students-table td{
+
+    padding:18px;
+
+    border-bottom:1px solid #eee;
+
+}
