@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
+import { loginUser } from "../../services/auth";
 
 
 function Login() {
@@ -10,22 +11,30 @@ function Login() {
   const navigate = useNavigate();
 
   const [role, setRole] = useState("student");
+   
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
+  try {
+    const response = await loginUser({
+      email,
+      password,
+    });
 
-    if(role === "student"){
+    localStorage.setItem("token", response.token);
+    localStorage.setItem("user", JSON.stringify(response.user));
 
+    if (response.user.role === "student") {
       navigate("/student/dashboard");
-
-    }
-    else if(role === "instructor"){
-
+    } else {
       navigate("/instructor/dashboard");
-
     }
-
-  };
+  } catch (error) {
+    alert(error.response?.data?.message || "Login Failed");
+  }
+};
 
 
   return (
@@ -107,8 +116,10 @@ function Login() {
 
 
                 <input
-                  type="email"
-                  placeholder="Enter your email"
+               type="email"
+               placeholder="Enter your email"
+               value={email}
+               onChange={(e) => setEmail(e.target.value)}
                 />
 
 
@@ -126,9 +137,11 @@ function Login() {
 
 
                 <input
-                  type="password"
-                  placeholder="Enter password"
-                />
+               type="password"
+               placeholder="Enter password"
+               value={password}
+               onChange={(e) => setPassword(e.target.value)}
+               />
 
 
               </div>

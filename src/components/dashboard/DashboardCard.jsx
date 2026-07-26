@@ -2,9 +2,10 @@ function DashboardCard({ number, title }) {
   return (
     <div className="dashboard-card">
 
-      <h2>{number}</h2>
-
-      <p>{title}</p>
+      <div className="dashboard-card-content">
+        <h2>{number}</h2>
+        <p>{title}</p>
+      </div>
 
     </div>
   );

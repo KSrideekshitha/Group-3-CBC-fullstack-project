@@ -4,45 +4,59 @@ import {
   FaClipboardList,
   FaChartLine,
   FaUser,
-  FaSignOutAlt
+  FaSignOutAlt,
 } from "react-icons/fa";
 
+import { Link, useNavigate } from "react-router-dom";
+
 function Sidebar() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
+
   return (
     <aside className="sidebar">
 
-      <h2 className="sidebar-logo">EduNova</h2>
+      <h2 className="sidebar-logo">🎓 EduNova</h2>
 
       <ul>
 
         <li>
-          <FaHome />
-          Dashboard
+          <Link to="/student/dashboard">
+            <FaHome /> Dashboard
+          </Link>
         </li>
 
         <li>
-          <FaBookOpen />
-          My Courses
+          <Link to="/student/courses">
+            <FaBookOpen /> Courses
+          </Link>
         </li>
 
         <li>
-          <FaClipboardList />
-          Quizzes
+          <Link to="/student/quiz">
+            <FaClipboardList /> Quizzes
+          </Link>
         </li>
 
         <li>
-          <FaChartLine />
-          Progress
+          <Link to="/student/result">
+            <FaChartLine /> Results
+          </Link>
         </li>
 
         <li>
-          <FaUser />
-          Profile
+          <Link to="#">
+            <FaUser /> Profile
+          </Link>
         </li>
 
-        <li>
-          <FaSignOutAlt />
-          Logout
+        <li onClick={handleLogout} className="logout-btn">
+          <FaSignOutAlt /> Logout
         </li>
 
       </ul>

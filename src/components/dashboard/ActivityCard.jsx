@@ -2,7 +2,13 @@ function ActivityCard({ activity }) {
   return (
     <div className="activity-card">
 
-      <p>{activity}</p>
+      <div className="activity-icon">
+        📌
+      </div>
+
+      <div className="activity-content">
+        <p>{activity}</p>
+      </div>
 
     </div>
   );

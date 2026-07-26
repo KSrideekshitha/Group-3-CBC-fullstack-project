@@ -1,7 +1,10 @@
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
+import { Link } from "react-router-dom";
 
 function StudentDashboard() {
+  const user = JSON.parse(localStorage.getItem("user")) || {};
+
   return (
     <>
       <Navbar />
@@ -9,30 +12,32 @@ function StudentDashboard() {
       <div className="dashboard">
 
         <div className="dashboard-header">
-          <h1>👋 Welcome Back, Student</h1>
-          <p>Continue your learning journey with LearnVista.</p>
+          <h1>👋 Welcome Back, {user.name || "Student"}!</h1>
+          <p>
+            Keep learning every day and achieve your goals with LearnVista.
+          </p>
         </div>
 
         <div className="dashboard-cards">
 
           <div className="dashboard-card">
             <h2>8</h2>
-            <p>Enrolled Courses</p>
+            <p>📚 Enrolled Courses</p>
           </div>
 
           <div className="dashboard-card">
             <h2>24</h2>
-            <p>Completed Lessons</p>
+            <p>🎥 Lessons Completed</p>
           </div>
 
           <div className="dashboard-card">
             <h2>6</h2>
-            <p>Quizzes Taken</p>
+            <p>📝 Quizzes Taken</p>
           </div>
 
           <div className="dashboard-card">
             <h2>92%</h2>
-            <p>Overall Progress</p>
+            <p>📈 Overall Progress</p>
           </div>
 
         </div>
@@ -48,12 +53,17 @@ function StudentDashboard() {
             <p>Lesson 12 of 24 Completed</p>
 
             <div className="progress-bar">
-              <div className="progress-fill" style={{ width: "50%" }}></div>
+              <div
+                className="progress-fill"
+                style={{ width: "50%" }}
+              ></div>
             </div>
 
-            <button className="primary-btn">
-              Resume Course
-            </button>
+            <Link to="/courses">
+              <button className="primary-btn">
+                Resume Course
+              </button>
+            </Link>
 
           </div>
 
@@ -64,13 +74,51 @@ function StudentDashboard() {
             <p>Lesson 18 of 30 Completed</p>
 
             <div className="progress-bar">
-              <div className="progress-fill" style={{ width: "60%" }}></div>
+              <div
+                className="progress-fill"
+                style={{ width: "60%" }}
+              ></div>
             </div>
 
-            <button className="primary-btn">
-              Resume Course
-            </button>
+            <Link to="/courses">
+              <button className="primary-btn">
+                Resume Course
+              </button>
+            </Link>
 
+          </div>
+
+        </div>
+
+        <div className="dashboard-section">
+
+          <h2>Quick Actions</h2>
+
+          <div
+            style={{
+              display: "flex",
+              gap: "15px",
+              flexWrap: "wrap",
+              marginTop: "20px",
+            }}
+          >
+            <Link to="/courses">
+              <button className="primary-btn">
+                Browse Courses
+              </button>
+            </Link>
+
+            <Link to="/progress">
+              <button className="primary-btn">
+                View Progress
+              </button>
+            </Link>
+
+            <Link to="/result">
+              <button className="primary-btn">
+                Quiz Results
+              </button>
+            </Link>
           </div>
 
         </div>

@@ -1,11 +1,9 @@
-function CourseCard({ title, level, lessons }) {
+function CourseCard({ title, level, lessons, description }) {
   return (
     <div className="course-card">
 
       <div className="course-image">
-
-        <h2>{title.charAt(0)}</h2>
-
+        <h2>{title ? title.charAt(0).toUpperCase() : "C"}</h2>
       </div>
 
       <div className="course-content">
@@ -14,13 +12,17 @@ function CourseCard({ title, level, lessons }) {
 
         <h3>{title}</h3>
 
-        <p>📖 {lessons}</p>
+        <p className="course-description">
+          {description || "Enhance your skills with this interactive course."}
+        </p>
 
-        <p>⭐ 4.8 (1,250 Reviews)</p>
+        <p>📚 {lessons}</p>
 
-        <p>👨‍🎓 2,300 Students</p>
+        <p>⭐ 4.8 Rating</p>
 
-        <button>
+        <p>👨‍🎓 2,300+ Students</p>
+
+        <button className="primary-btn">
           View Course
         </button>
 
