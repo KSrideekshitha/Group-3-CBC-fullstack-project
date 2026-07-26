@@ -1,0 +1,56 @@
+import "../styles/QuizResult.css";
+
+
+const QuizResult = ({
+  score,
+  total
+}) => {
+
+  const percentage =
+    Math.round(
+      (score / total) * 100
+    );
+
+
+  return (
+
+    <div className="result-page">
+
+      <div className="result-card">
+
+        <h1>Quiz Completed!</h1>
+
+        <p className="result-score">
+
+          You scored
+
+          <strong>
+            {score} / {total}
+          </strong>
+
+        </p>
+
+
+        <p className="percentage">
+
+          Percentage: {percentage}%
+
+        </p>
+
+
+        <p className="success-message">
+
+          Your quiz attempt has been saved successfully.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  );
+
+};
+
+
+export default QuizResult;
