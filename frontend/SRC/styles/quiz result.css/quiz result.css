@@ -1,0 +1,39 @@
+.result-page {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.result-card {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.result-card h1 {
+  margin-bottom: 20px;
+}
+
+.result-score {
+  font-size: 20px;
+}
+
+.result-score strong {
+  display: block;
+  font-size: 40px;
+  margin-top: 15px;
+}
+
+.percentage {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.success-message {
+  margin-top: 20px;
+}
